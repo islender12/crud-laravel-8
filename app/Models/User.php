@@ -45,4 +45,28 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany(Post::class);
     }
+
+    // Nos Imprimira los datos como le indiquemos ya sea mayuscula minuscula primera letra en Mayuscula
+    // En medio de getAttribute debe ir el nombre del campo que queremos imprimir
+    // getGetNameAttribute()
+    public function getGetNameAttribute()
+    {
+        // el Nombre del Campo
+        // no lo estamos alterando solo lo imprimimos en mayuscula
+        return strtoupper($this->name);
+    }
+
+    // En el caso de como queremos almacenar los datos
+    // Tenemos el SetAttribute que nos permite indicar
+    // que almacene en la bd solo en minuscula
+
+    // en medio solo colocamos el nombre del campo
+    // ejemplo setNameAttribute
+
+    // Cuando se trate del campo name este sufre una transformacion
+    // para convertirse en minuscula y almacena el nombre en minuscula
+    public function setNameAttribute($value)
+    {
+         $this->attributes['name'] = strtolower($value);
+    }
 }

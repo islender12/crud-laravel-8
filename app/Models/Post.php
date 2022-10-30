@@ -18,4 +18,15 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getGetTitleAttribute()
+    {
+       // return strtoupper($this->title);
+       // Queremos que nos Imprima la primera letra en mayuscula
+       return ucfirst($this->title);
+    }
+
+    public function setTitleAttribute($value){
+        $this->attributes['title'] = strtolower($value);
+    }
 }

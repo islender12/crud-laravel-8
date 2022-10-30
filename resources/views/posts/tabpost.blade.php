@@ -9,8 +9,8 @@
         @foreach ($posts as $post)
             <tr>
                 <td>{{ $post->id }}</td>
-                <td>{{ $post->title }}</td>
-                <td>{{ $post->user->name }}</td>
+                <td>{{ $post->get_title }}</td>
+                <td>{{ $post->user->get_name }}</td>
                 <td>
                     <form action="{{ route('posts.destroy', $post) }}" method="POST">
                         @csrf
