@@ -20,4 +20,5 @@
     @yield('content')
 </body>
 
+<script src="{{asset('js/')}}"></script>
 </html>
