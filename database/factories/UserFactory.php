@@ -12,6 +12,14 @@ class UserFactory extends Factory
      *
      * @return array
      */
+    
+    /**
+     * Llamar el factory desde tinker
+     * php artisan tinker
+     *
+     * User::factory()->count(5)->create()
+     *
+     */
     public function definition()
     {
         return [
